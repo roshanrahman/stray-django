@@ -7,15 +7,13 @@ ERRORS = {
 }
 
 
-def resolve_errors_to_dict(error_code):
-    if error_code is None:
+def resolve_errors_to_dict(error_obj=None):
+    if error_obj is None:
         return None
-    if ERRORS.get(error_code, None) is not None:
-        return {
-            'error_code': error_code,
-            'error_message': ERRORS.get(error_code)
-        }
-    raise KeyError('This is not a valid error code')
+    return {
+        'code': error_obj[0],
+        'message': error_obj[1]
+    }
 
 
 class AbstractResponse(JsonResponse):
