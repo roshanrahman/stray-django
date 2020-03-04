@@ -1,5 +1,7 @@
 from django.http import JsonResponse
-from utilities.errors import INVALID_ROUTE
+from utilities.errors import INVALID_ROUTE, USER_DOES_NOT_EXIST
+from users.models import CustomUser
+from utilities.jwt import encode_jwt, decode_jwt
 
 
 def resolve_errors_to_dict(error_obj=None):
@@ -50,3 +52,18 @@ class ReportResponse(StandardResponse):
                 'values': json_list
             }
             super().__init__(data=data)
+
+
+class UserResponse(StandardResponse):
+    def __init__(self, user_id):
+        user = None
+        try:
+            user = CustomUser.objects.get(pk=int(user_id))
+            user_json = dict()
+            user_json['jwt'] = str(encode_jwt(user.id), 'utf-8')
+            user_json['phone'] = user.phone
+            user_json['account_type'] = user.account_type
+            super().__init__(data=user_json)
+        except Exception as e:
+            print(e)
+            super().__init__(error_code=USER_DOES_NOT_EXIST)
