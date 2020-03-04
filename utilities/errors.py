@@ -1,7 +1,7 @@
 # General API related errors
 
 INVALID_ROUTE = (
-    'INVALID_ROUTE', 'The route you accessed is not a valid route, please check API docs (visit the / endpoint to know more)'
+    'INVALID_ROUTE', 'The route you accessed is not a valid route, please check API docs (https://roshanrahman.github.io/stray-django/)'
 )
 
 NOT_AUTHORIZED = (
@@ -9,7 +9,7 @@ NOT_AUTHORIZED = (
 )
 
 INVALID_PARAMS = (
-    'INVALID_PARAMS', 'The parameters to this request are incorrect/missing. please check API docs (visit the / endpoint to know more)'
+    'INVALID_PARAMS', 'The parameters to this request are incorrect/missing. please check API docs (https://roshanrahman.github.io/stray-django/)'
 )
 
 # User Auth specific errors
