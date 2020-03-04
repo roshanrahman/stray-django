@@ -1,0 +1,1 @@
+web: gunicorn straydjango.wsgi --log-file -
