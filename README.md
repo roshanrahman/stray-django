@@ -24,7 +24,7 @@
 
    Result:
 
-   ```
+   ```json
    {
        "data": {
            "jwt": "---jwt_token---",
@@ -50,7 +50,7 @@
     `POST https://djangoproject-straycattle.herokuapp.com/auth/login` with `phone=123`, `password=123` (returns user details w/ jwt if user exists)
 
     Result:
-    ```
+    ```json
     {
         "data": {
             "jwt": "---jwt_token---",
