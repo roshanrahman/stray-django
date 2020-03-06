@@ -2,18 +2,20 @@
 
 ### Base URL
 
-[`https://djangoproject-straycattle.herokuapp.com/`](https://roshanrahman.github.io/stray-django/)
+[`https://djangoproject-straycattle.herokuapp.com/`](http://djangoproject-straycattle.herokuapp.com/)
 
 ## Quickstart
 
 ### Endpoints
 
 The server will respond to the listed API endpoints with the appropriate response. For other endpoints, unlisted or incorrectly used, the server will respond with a `INVALID_ROUTE` response.
-|Endpoint|Purpose |
-|--|--|
-| `auth/` | Handles user authentication (register, login) |
-| `reports/`|Handles reports uploaded by citizens (CRUD)|
-| `geocoding/`|Handles geocoding operations|
+
+| Endpoint     | Purpose                                       |
+| ------------ | --------------------------------------------- |
+| `auth/`      | Handles user authentication (register, login) |
+| `reports/`   | Handles reports uploaded by citizens (CRUD)   |
+| `geocoding/` | Handles geocoding operations                  |
+
 For other URLs, you may receive a `INVALID_ROUTE` response.
 
 ## Authentication
