@@ -30,9 +30,28 @@ class StandardResponse(JsonResponse):
         })
 
 
+class SuccessResponse(JsonResponse):
+
+    error = None
+    data = None
+
+    def __init__(self, action_name=None):
+        self.error = None
+        self.data = {
+            'success': True,
+            'action_name': action_name if action_name else 'Action completed successfully'
+        }
+
+    def json(self):
+        return JsonResponse({
+            'data': self.data,
+            'error': self.error,
+        })
+
+
 class ReportResponse(StandardResponse):
 
-    def __init__(self, report_list):
+    def __init__(self, report_list=None):
         list_of_reports = report_list
         if list_of_reports is None:
             super().__init__(error_code=INVALID_ROUTE)
@@ -42,7 +61,6 @@ class ReportResponse(StandardResponse):
                 json_object = dict()
                 json_object['citizen_id'] = report.citizen.id
                 json_object['images'] = report.images
-                json_object['multiple'] = report.multiple
                 json_object['latitude'] = report.latitude
                 json_object['longitude'] = report.longitude
                 json_object['status'] = report.status

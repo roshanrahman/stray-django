@@ -12,6 +12,10 @@ INVALID_PARAMS = (
     'INVALID_PARAMS', 'The parameters to this request are incorrect/missing. please check API docs (https://roshanrahman.github.io/stray-django/)'
 )
 
+SOMETHING_WENT_WRONG = (
+    'SOMETHING_WENT_WRONG', 'Something went wrong while processing your request. Internal Server Error'
+)
+
 # User Auth specific errors
 
 USER_ALREADY_EXISTS = (
