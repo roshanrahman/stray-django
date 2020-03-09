@@ -45,7 +45,7 @@ Example:
 | `auth/login` | Login to an account |
 
 
-1. ### New user registration
+### New user registration
 
 **Endpoint**: **POST** `/auth/register`
 
@@ -77,7 +77,7 @@ Response:
 }
 ```
 
-2. ### Login
+### Login
 
 **Endpoint**: **POST** `/auth/login`
 
@@ -109,7 +109,7 @@ Response:
 
 ## Reports
 
-1. ### Add a report
+### Add a report
 
 **Endpoint**: **POST** `/reports/add` (**User must be authenticated with JWT**)
 
