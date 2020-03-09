@@ -44,6 +44,7 @@ Example:
 | `auth/register` | Create a new account |
 | `auth/login` | Login to an account |
 
+
 1. ### New user registration
 
 **Endpoint**: **POST** `/auth/register`
