@@ -38,8 +38,9 @@ Example:
 ## Authentication
 
 **Endpoints**:
+
 | Endpoint | Purpose |
-| ---| --- |
+| -----| ----- |
 | `auth/register` | Create a new account |
 | `auth/login` | Login to an account |
 
