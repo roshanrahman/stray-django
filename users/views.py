@@ -41,7 +41,7 @@ def login(request):
         return StandardResponse(error_code=USER_DOES_NOT_EXIST).json()
     user = authenticate(phone=phone, password=password)
     if user is not None:
-        return UserResponse(user.id)
+        return UserResponse(user.id).json()
     return StandardResponse(error_code=INVALID_PASSWORD).json()
 
 
