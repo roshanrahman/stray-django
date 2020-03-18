@@ -34,6 +34,7 @@ def add_report(request):
             status='unread'
         )
         report.save()
-    except Exception:
+    except Exception as e:
+        print(e)
         return responses.StandardResponse(error_code=errors.SOMETHING_WENT_WRONG).json()
     return responses.SuccessResponse(action_name='ADD_REPORT').json()
