@@ -39,11 +39,10 @@ Example:
 
 **Endpoints**:
 
-| Endpoint | Purpose |
-| -----| ----- |
+| Endpoint        | Purpose              |
+| --------------- | -------------------- |
 | `auth/register` | Create a new account |
-| `auth/login` | Login to an account |
-
+| `auth/login`    | Login to an account  |
 
 ### New user registration
 
@@ -119,7 +118,7 @@ Response:
 
 2. `longitude` (required) - Longitude in decimal
 
-3. `images` (required) - List (array) of URLs (in JSON-encoded string format)
+3. `images` (required) - List (array) of URLs (in JSON-encoded string format) - **Pass it through a JSON validator to check if it is right**
 
 **Example**:
 
@@ -133,7 +132,7 @@ Header containing:
 
 Body containing:
 
-`latitude=0` & `longitude=0` & `images=['http://images.gg.com/445.jpg','http://example.image.org/2334.jpg']` (returns success message if report is added)
+`latitude=0` & `longitude=0` & `images=["http://images.gg.com/445.jpg","http://example.image.org/2334.jpg"]` (returns success message if report is added)
 
 Response:
 
