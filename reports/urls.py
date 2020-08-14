@@ -18,4 +18,5 @@ from django.urls import path
 from reports import views
 urlpatterns = [
     path('add', views.add_report),
+    path('list', views.list_reports)
 ]

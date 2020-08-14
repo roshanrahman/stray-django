@@ -1,5 +1,6 @@
+from utilities.responses import ReportResponse
 from django.shortcuts import render
-from django.views.decorators.http import require_POST
+from django.views.decorators.http import require_POST, require_GET
 from utilities.jwt import decode_jwt, extract_user_from_header
 from json import loads, dumps
 from utilities import errors, responses
@@ -35,3 +36,9 @@ def add_report(request):
     except Exception:
         return responses.StandardResponse(error_code=errors.SOMETHING_WENT_WRONG).json()
     return responses.SuccessResponse(action_name='ADD_REPORT').json()
+
+
+@require_GET
+def list_reports(request):
+    reports = CitizenReport.objects.all()
+    return ReportResponse(report_list=reports).json()
