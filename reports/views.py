@@ -21,19 +21,22 @@ def add_report(request):
     if not latitude or not longitude:
         return responses.StandardResponse(error_code=(errors.INVALID_PARAMS[0], 'The latitude or longitude are missing')).json()
     try:
-        images = loads(images)
-    except Exception:
+        print('The images are', images)
+        images = loads(str(images))
+    except Exception as e:
+        print(e)
         return responses.StandardResponse(error_code=(errors.INVALID_PARAMS[0], 'The images are missing or not formatted properly. Please send a JSON-encoded string of array of URLs')).json()
     try:
         report = CitizenReport(
             citizen=CustomUser.objects.get(pk=int(user_id)),
-            latitude=latitude,
-            longitude=longitude,
+            latitude=float(latitude),
+            longitude=float(latitude),
             images=dumps(images),
             status='unread'
         )
         report.save()
-    except Exception:
+    except Exception as e:
+        print(e)
         return responses.StandardResponse(error_code=errors.SOMETHING_WENT_WRONG).json()
     return responses.SuccessResponse(action_name='ADD_REPORT').json()
 
