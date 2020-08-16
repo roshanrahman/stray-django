@@ -44,4 +44,5 @@ def add_report(request):
 @require_GET
 def list_reports(request):
     reports = CitizenReport.objects.all()
+    # reports = list(reports)
     return ReportResponse(report_list=reports).json()
