@@ -30,7 +30,7 @@ def add_report(request):
         report = CitizenReport(
             citizen=CustomUser.objects.get(pk=int(user_id)),
             latitude=float(latitude),
-            longitude=float(latitude),
+            longitude=float(longitude),
             images=dumps(images),
             status='unread'
         )
